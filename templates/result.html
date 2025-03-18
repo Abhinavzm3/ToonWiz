@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h1>Original vs Cartoonized</h1>
+    <div style="display: flex">
+        <div style="margin-right: 20px">
+            <h3>Original</h3>
+            <img src="{{ url_for('static', filename='uploads/' + original) }}" width="500">
+        </div>
+        <div>
+            <h3>Cartoonized</h3>
+            <img src="{{ url_for('static', filename='cartoonized/' + cartoon) }}" width="500">
+        </div>
+    </div>
+</body>
+</html>
