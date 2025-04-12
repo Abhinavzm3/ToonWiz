@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 import cv2
 import numpy as np
+from flask import send_from_directory
 
 app = Flask(__name__)
 
@@ -77,6 +78,10 @@ def upload():
                              cartoon=cartoon_filename)
     
     return redirect(request.url)
+
+@app.route('/download/<filename>')
+def download(filename):
+    return send_from_directory(app.config['CARTOON_FOLDER'], filename)
 
 if __name__ == '__main__':
     app.run(debug=True)

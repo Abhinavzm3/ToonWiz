@@ -1,13 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Image Cartoonizer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Cartoonizer</title>
+  <style>
+    /* Reset some default styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Set a pleasing background and font family */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Container to center the content */
+    .container {
+      background-color: #fff;
+      padding: 2rem 3rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    /* Stylish Heading */
+    .container h1 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    /* Form styling */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* File input styling */
+    input[type="file"] {
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    /* Submit button styling */
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 200px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .container h1 {
+        font-size: 1.5rem;
+      }
+      
+      input[type="submit"] {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <h1>Upload Image to Cartoonize</h1>
     <form method="POST" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*">
-        <input type="submit" value="Upload">
+      <input type="file" name="file" accept="image/*">
+      <input type="submit" value="Upload">
+      (png,jpg,jpeg)
     </form>
+  </div>
 </body>
 </html>
